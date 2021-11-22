@@ -11,7 +11,6 @@ import java.util.List;
 public class MiniMarketApiServic {
 
     private final MiniMarketApi api;
-    public Product createProduct;
 
     public MiniMarketApiServic() {
 
@@ -38,10 +37,19 @@ public class MiniMarketApiServic {
         }
     }
 
-    public Product createProduct(Product product) throws IOException {
+    public Long createProduct(Product product) throws IOException {
         return api.createProduct(product)
                 .execute()
-                .body();
+                .body()
+                .getId();
+    }
+
+    public void deleteProduct(long id) throws IOException {
+        api.deleteProduct(id).execute();
+    }
+
+    public void updateProduct(Product product) throws IOException {
+        api.updateProduct(product).execute();
     }
 
 
