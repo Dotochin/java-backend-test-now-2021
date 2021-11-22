@@ -1,4 +1,3 @@
-
 package com.geekbrains.retrofit;
 
 import com.geekbrains.retrofit.api.MiniMarketApi;

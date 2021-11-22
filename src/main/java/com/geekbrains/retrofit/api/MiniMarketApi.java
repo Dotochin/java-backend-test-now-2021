@@ -17,10 +17,10 @@ public interface MiniMarketApi {
     @POST("api/v1/products")
     Call<Product> createProduct(@Body Product product);
 
-    @PUT("api/v1/products")
-    Call<Product> modifyProduct(@Body Product product);
-
     @DELETE("api/v1/products/{id}")
-    Call<Product> deleteProduct(@Path("id") Long id);
+    Call<Object> deleteProduct(@Path("id") Long id);
+
+    @PUT("api/v1/products")
+    Call<Product> updateProduct(@Body Product product);
 
 }
